@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HouseCard extends StatelessWidget {
   final String image;
@@ -46,20 +47,18 @@ class HouseCard extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(
+                    style: GoogleFonts.raleway(
                       color: Colors.black,
                       fontSize: 16,
-                      fontFamily: 'Raleway',
                       fontWeight: FontWeight.w500,
                       height: 0,
                     ),
                   ),
                   Text(
                     'GHS $price / Year',
-                    style: const TextStyle(
-                      color: Color(0xFF0A8ED9),
+                    style: GoogleFonts.raleway(
+                      color: const Color(0xFF0A8ED9),
                       fontSize: 12,
-                      fontFamily: 'Raleway',
                       fontWeight: FontWeight.w400,
                       height: 0,
                     ),
@@ -73,10 +72,9 @@ class HouseCard extends StatelessWidget {
                       ),
                       Text(
                         '$bedRoomNumber Bedroom',
-                        style: const TextStyle(
-                          color: Color(0xFF848484),
+                        style: GoogleFonts.raleway(
+                          color: const Color(0xFF848484),
                           fontSize: 12,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -87,10 +85,9 @@ class HouseCard extends StatelessWidget {
                       ),
                       Text(
                         '$bathRoomNumber Bathroom',
-                        style: const TextStyle(
-                          color: Color(0xFF848484),
+                        style: GoogleFonts.raleway(
+                          color: const Color(0xFF848484),
                           fontSize: 12,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),

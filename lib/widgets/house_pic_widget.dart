@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:home_rent/screens/details_screens.dart';
 
 class HouseWidget extends StatelessWidget {
   final String image;
@@ -28,41 +30,45 @@ class HouseWidget extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
-                  decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(image),
-                      fit: BoxFit.fill,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DetailsPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: ShapeDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(image),
+                        fit: BoxFit.fill,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                    // child: Expanded(child: Image.asset(image)),
                   ),
                 ),
-                Container(
-                  width: 222,
-                  height: 272,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x0A000000),
-                        blurRadius: 20,
-                        // offset: Offset(20, 20),
-                        spreadRadius: -5,
-                      ),
-                      BoxShadow(
-                        color: Color(0x0A000000),
-                        blurRadius: 20,
-                        // offset: Offset(0, 2),
-                        spreadRadius: -5,
-                      ),
-                      BoxShadow(
-                        color: Color(0x0A000000),
-                        blurRadius: 24,
-                        // offset: Offset(0, 16),
-                        spreadRadius: -5,
-                      )
-                    ],
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: Container(
+                    width: 182,
+                    height: 54,
+                    decoration: const BoxDecoration(
+                      // color: Colors.black26,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 24,
+                          // offset: Offset(0, 16),
+                          spreadRadius: -5,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -72,10 +78,9 @@ class HouseWidget extends StatelessWidget {
               top: 215,
               child: Text(
                 name,
-                style: const TextStyle(
+                style: GoogleFonts.raleway(
                   color: Colors.white,
                   fontSize: 16,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w500,
                   height: 0,
                 ),
@@ -86,10 +91,9 @@ class HouseWidget extends StatelessWidget {
               top: 242,
               child: Text(
                 owner,
-                style: const TextStyle(
-                  color: Color(0xFFD6D6D6),
+                style: GoogleFonts.raleway(
+                  color: const Color(0xFFD6D6D6),
                   fontSize: 12,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w400,
                   height: 0,
                 ),
@@ -119,10 +123,9 @@ class HouseWidget extends StatelessWidget {
                       ),
                       Text(
                         '$location km',
-                        style: const TextStyle(
+                        style: GoogleFonts.raleway(
                           color: Colors.white,
                           fontSize: 12,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w400,
                         ),
                       ),

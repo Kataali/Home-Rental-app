@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:home_rent/widgets/house_card_widget.dart';
 import 'package:home_rent/widgets/house_categories.dart';
 import 'package:home_rent/widgets/house_pic_widget.dart';
+import 'package:home_rent/widgets/my_drawer.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -20,6 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const HomeDrawer(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -31,12 +33,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Column(
                       children: [
-                        const Text(
+                        Text(
                           "Location",
-                          style: TextStyle(
-                            color: Color(0xFF828282),
+                          style: GoogleFonts.raleway(
+                            color: const Color(0xFF828282),
                             fontSize: 12,
-                            fontFamily: 'Raleway',
                             fontWeight: FontWeight.w400,
                             height: 0,
                           ),
@@ -89,7 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             hintText: "Search address or near you",
                             hintStyle: const TextStyle(fontSize: 12),
                             filled: true,
-                            // fillColor: Color.fromARGB(1, 131, 131, 131),
                             fillColor: const Color(0xFFF6F6F6),
                           ),
                         ),
@@ -122,9 +122,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             child: TextButton(
-                              style: TextButton.styleFrom(
-                                  // fixedSize: Size(15, ),
-                                  ),
                               onPressed: () {},
                               child: const Text(
                                 "House",
@@ -143,29 +140,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Near from you',
-                        style: TextStyle(
+                        style: GoogleFonts.raleway(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w500,
+                          height: 0,
                         ),
                       ),
-                      Text(
-                        'See more',
-                        style: TextStyle(
-                          color: Color(0xFF848484),
-                          fontSize: 12,
-                          fontFamily: 'Raleway',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      Text('See more',
+                          style: GoogleFonts.raleway(
+                            color: const Color(0xFF848484),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          )),
                     ],
                   ),
                 ),
@@ -187,26 +181,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Best for you',
-                        style: TextStyle(
+                        style: GoogleFonts.raleway(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       Text(
                         'See more',
-                        style: TextStyle(
-                          color: Color(0xFF848484),
+                        style: GoogleFonts.raleway(
+                          color: const Color(0xFF848484),
                           fontSize: 12,
-                          fontFamily: 'Raleway',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
